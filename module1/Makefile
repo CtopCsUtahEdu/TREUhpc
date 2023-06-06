@@ -24,13 +24,13 @@ run_mkl_dgemm: $(BUILDDIR)/mkl_dgemm
 	MKL_NUM_THREADS=1 ./$(BUILDDIR)/mkl_dgemm
 
 run_mkl_dgemm_parallel: $(BUILDDIR)/mkl_dgemm
-	MKL_NUM_THREADS=55 ./$(BUILDDIR)/mkl_dgemm
+	MKL_NUM_THREADS=$(shell nproc --all) ./$(BUILDDIR)/mkl_dgemm
 
 run_loops_dgemm: $(BUILDDIR)/loops_dgemm
 	./$(BUILDDIR)/loops_dgemm
 
 run_loops_dgemm_parallel: $(BUILDDIR)/loops_dgemm_parallel
-	OMP_NUM_THREADS=55 ./$(BUILDDIR)/loops_dgemm_parallel
+	OMP_NUM_THREADS=$(shell nproc --all) ./$(BUILDDIR)/loops_dgemm_parallel
 
 run_cuda_dgemm: $(BUILDDIR)/cuda_dgemm
 	./$(BUILDDIR)/cuda_dgemm
