@@ -22,7 +22,7 @@ int main() {
     int m = 1024;
     int n = 1024;
     int k = 1024;
-    int numIterations = 10;
+    int numIterations = 100;
 
     // Allocate memory on the host
     double *h_A = new double[m * k];
