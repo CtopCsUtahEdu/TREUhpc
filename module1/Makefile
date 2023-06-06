@@ -38,6 +38,12 @@ run_cuda_dgemm: $(BUILDDIR)/cuda_dgemm
 run_cublas_dgemm: $(BUILDDIR)/cublas_dgemm
 	./$(BUILDDIR)/cublas_dgemm
 
+run_python_dgemm_loops:
+	python3 ./$(SRCDIR)/loops_dgemm_naive.py
+
+run_python_dgemm_numpy:
+	MKL_NUM_THREADS=$(shell nproc --all) python3 ./$(SRCDIR)/loops_dgemm_numpy.py
+
 clean:
 	@echo " Cleaning..."
 	@rm -fr $(BUILDDIR) 2>/dev/null || true
