@@ -6,7 +6,7 @@
 Get an interactive session on a CHPC node:
 
 ```
-srun -M notchpeak --account=soc-gpu-np --partition=soc-gpu-np --nodes=1 -t 0:30:00  --gres=gpu:a100:1  --pty /bin/bash -l
+srun -M kingspeak --account=soc-gpu-kp --partition=soc-gpu-kp --nodes=1 -t 0:30:00  --gres=gpu:p100:1  --pty /bin/bash -l
 ```
 
 Load these modules:
