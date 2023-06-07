@@ -15,7 +15,7 @@ module load python cuda intel intel-mkl
 
 
 ## List of Benchmarks
-Run each benchmark with `make`:
+Run each benchmark with commands below:
 1. Interpreted Python
 
 ```
